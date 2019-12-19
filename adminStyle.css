@@ -1,0 +1,46 @@
+.container-header{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    width: 200px;
+}
+
+.banner-title{
+    color: #ff6600;
+    font-weight: bold;
+    padding: 60px 0px 0px 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-title{
+    color: #ff6600;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px 0px 0px 50px
+}
+
+.container-main{
+    margin: 0px 50px 0px 50px;
+}
+
+.container-search{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.custom-select{
+    width: 400px;
+}
+
+.text-select-image{
+    width: 323px;
+}
+
+.btn{
+    margin: 10px 0px 0px 0px;
+    width: 200px;
+}
