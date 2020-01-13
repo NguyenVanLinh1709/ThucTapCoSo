@@ -1,6 +1,7 @@
 .container-header{
     display: flex;
     flex-direction: row;
+    padding: 20px 0px 0px 20px
 }
 
 .logo {
@@ -21,6 +22,11 @@
     padding: 0px 0px 0px 50px
 }
 
+.main-title.fix-top{
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
 .container-main{
     margin: 0px 50px 0px 50px;
     display: flex;
@@ -33,6 +39,79 @@
 }
 
 .detail{
-    padding: 10px 0px 0px 20px;
+    padding: 0px 0px 0px 20px;
 }
+
+.detail.title{
+    padding: 0px 0px 0px 20px;
+}
+
+.card-title{
+    height: 50px;
+}
+
+h4{
+    color: #ff6600;
+}
+
+.card-address{
+    height: 25px;
+    font-size: 14px;
+}
+
+.card-price{
+    font-size: 14px;
+}
+
+.card-phone{
+    font-size: 14px;
+}
+
+.card-text{
+    font-size: 14px;
+}
+
+.clmargin-0{
+    margin-bottom: 0px;
+}
+
+hr{
+    padding: 0px 0px 0px 0px;
+}
+
+.comment{
+    padding: 20px 50px 0px 50px;
+}
+
+.container-footer{
+    background-color: lightgray;
+}
+
+.container-more{
+    margin: 0px 50px 0px 50px;
+}
+
+.fix-padding{
+    padding-left: 50px;
+}
+
+.container-danhmuc{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container-amthuc{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.container-xaphuong{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
 
