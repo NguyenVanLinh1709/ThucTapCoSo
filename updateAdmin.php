@@ -80,11 +80,39 @@
             <fieldset class="form-group">
                 <div class="row">
                     <legend class="col-form-label col-sm-2 pt-0">Đánh giá</legend>
-                    <input type="radio" name="danhgia" value="1" <?php if ($danhgia == 1) echo "checked" ?>> 1 Sao
-                    <input type="radio" name="danhgia" value="2" <?php if ($danhgia == 2) echo "checked" ?>> 2 Sao
-                    <input type="radio" name="danhgia" value="3" <?php if ($danhgia == 3) echo "checked" ?>> 3 Sao
-                    <input type="radio" name="danhgia" value="4" <?php if ($danhgia == 4) echo "checked" ?>> 4 Sao
-                    <input type="radio" name="danhgia" value="5" <?php if ($danhgia == 5) echo "checked" ?>> 5 Sao
+                    <div class="col-sm-10">
+                        <div class="form-check custom-control-inline">
+                            <input class="form-check-input" type="radio" name="danhgia" id="gridRadios1" <?php if ($danhgia == 1) echo "checked" ?> value="1" checked>
+                            <label class="form-check-label" for="gridRadios1" name="gridRadios1">
+                                1 sao
+                            </label>
+                        </div>
+                        <div class="form-check custom-control-inline">
+                            <input class="form-check-input" type="radio" name="danhgia" id="gridRadios2" <?php if ($danhgia == 2) echo "checked" ?> value="2">
+                            <label class="form-check-label" for="gridRadios2" name="gridRadios2">
+                                2 sao
+                            </label>
+                        </div>
+                        <div class="form-check custom-control-inline">
+                            <input class="form-check-input" type="radio" name="danhgia" id="gridRadios3" <?php if ($danhgia == 3) echo "checked" ?> value="3">
+                            <label class="form-check-label" for="gridRadios3" name="gridRadios3">
+                                3 sao
+                            </label>
+                        </div>
+                        <div class="form-check custom-control-inline">
+                            <input class="form-check-input" type="radio" name="danhgia" id="gridRadios4" <?php if ($danhgia == 4) echo "checked" ?> value="4">
+                            <label class="form-check-label" for="gridRadios4" name="gridRadios4">
+                                4 sao
+                            </label>
+                        </div>
+                        <div class="form-check custom-control-inline">
+                            <input class="form-check-input" type="radio" name="danhgia" id="gridRadios5" <?php if ($danhgia == 5) echo "checked" ?> value="5">
+                            <label class="form-check-label" for="gridRadios5" name="gridRadios5">
+                                5 sao
+                            </label>
+                        </div>
+                    </div>
+                    
                 </div>
             </fieldset>
 

@@ -23,34 +23,47 @@
 
     <div class="container-main">
         <form method="POST" enctype="multipart/form-data">
+            <?php
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $mamonan = trim($_POST['mamonan']);
+                $tenmonan = trim($_POST['tenmonan']);
+                $diachi = trim($_POST['diachi']);
+                $gia = trim($_POST['gia']);
+                $sodienthoai = trim($_POST['sdt']);
+                $gridRadios = trim($_POST['gridRadios']);
+                $danhmuc = trim($_POST['danhmuc']);
+                $amthuc = trim($_POST['amthuc']);
+                $xaphuong = trim($_POST['xaphuong']);
+            }
+            ?>
             <div class="form-group row">
                 <label for="inputmamonan" class="col-sm-2 col-form-label">Mã món ăn</label>
                 <div class="col-sm-10">
-                    <input type="text" name="mamonan" class="form-control" id="inputmamonan" placeholder="Mã món ăn (MA)...">
+                    <input type="text" name="mamonan" class="form-control" id="inputmamonan" value="<?php echo $mamonan ?>" placeholder="Mã món ăn (MA)...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputtenmonan" class="col-sm-2 col-form-label">Tên món ăn</label>
                 <div class="col-sm-10">
-                    <input type="text" name="tenmonan" class="form-control" id="inputtenmonan" placeholder="Tên món ăn...">
+                    <input type="text" name="tenmonan" class="form-control" id="inputtenmonan" value="<?php echo $tenmonan ?>" placeholder="Tên món ăn...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputdiachi" class="col-sm-2 col-form-label">Địa chỉ</label>
                 <div class="col-sm-10">
-                    <input type="text" name="diachi" class="form-control" id="inputdiachi" placeholder="Địa chỉ...">
+                    <input type="text" name="diachi" class="form-control" id="inputdiachi" value="<?php echo $diachi ?>" placeholder="Địa chỉ...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputgia" class="col-sm-2 col-form-label">Giá</label>
                 <div class="col-sm-10">
-                    <input type="number" name="gia" class="form-control" id="inputgia" placeholder="Giá...">
+                    <input type="number" name="gia" class="form-control" id="inputgia" value="<?php echo $diachi ?>" placeholder="Giá...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputsodienthoai" class="col-sm-2 col-form-label">Số điện thoại</label>
                 <div class="col-sm-10">
-                    <input type="number" name="sdt" class="form-control" id="inputsodienthoai" placeholder="Số điện thoại...">
+                    <input type="number" name="sdt" class="form-control" id="inputsodienthoai" value="<?php echo $sodienthoai ?>" placeholder="Số điện thoại...">
                 </div>
             </div>
 
@@ -208,7 +221,6 @@
                 }
 
                 if (empty($_POST['mota'])) {
-                    
                 } else {
                     $mota = trim($_POST['mota']);
                 }
@@ -230,18 +242,34 @@
                 } else {
                     $xaphuong = trim($_POST['xaphuong']);
                 }
-
-                if (empty($errors) == true) {
-                    $sql_them_monan = "INSERT INTO `mon_an`(`mamonan`, `tenmonan`, `diachi`, `gia`, `sodienthoai`, `danhgia`, `hinhanh`, `mota`, `madanhmuc`, `maamthuc`, `maphuong`) 
-                VALUES ('" . $mamonan . "','" . $tenmonan . "','" . $diachi . "','" . $gia . "','" . $sodienthoai . "','" . $gridRadios . "','" . $file_name . "','" . $mota . "','" . $danhmuc . "','" . $amthuc . "','" . $xaphuong . "')";
-                    move_uploaded_file($file_tmp, "./image/" . $file_name);
+                $sql_them_monan = "INSERT INTO `mon_an`(
+                                `mamonan`, 
+                                `tenmonan`, 
+                                `diachi`, 
+                                `gia`, 
+                                `sodienthoai`, 
+                                `danhgia`, 
+                                `hinhanh`, 
+                                `mota`, 
+                                `madanhmuc`, 
+                                `maamthuc`, 
+                                `maphuong`) 
+                                VALUES ('" . $mamonan . "',
+                                    '" . $tenmonan . "',
+                                    '" . $diachi . "',
+                                    '" . $gia . "',
+                                    '" . $sodienthoai . "',
+                                    '" . $gridRadios . "',
+                                    '" . $file_name . "',
+                                    '" . $mota . "',
+                                    '" . $danhmuc . "',
+                                    '" . $amthuc . "',
+                                    '" . $xaphuong . "')";
+                move_uploaded_file($file_tmp, "./image/" . $file_name);
+                if (isset($_FILES['hinhanh'])) {
                     if (mysqli_query($conn, $sql_them_monan)) {
                         echo "<h3>Thêm thành công</h3>";
-                    } else {
-                        echo "Không thêm món ăn được";
                     }
-                } else {
-                    print_r($errors);
                 }
             }
             ?>
